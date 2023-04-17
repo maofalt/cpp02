@@ -22,7 +22,8 @@ Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << GREEN << "\t[ ✓ ]" << BLUE << " Assignation '=' operator called" << std::endl;
 
-	this->_value = other.getRawBits();
+	if (this != &other)
+		this->_value = other.getRawBits();
 	return *this;
 }
 
@@ -47,6 +48,6 @@ void	Fixed::setRawBits(int const raw)
 
 std::ostream & operator<<(std::ostream & os, const Fixed & other)
 {
-	os << other.getRawBits();
+	os << static_cast<float>(other.getRawBits()) / (1 << 8);
 	return os;
 }
