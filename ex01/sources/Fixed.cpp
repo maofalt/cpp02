@@ -94,7 +94,7 @@ void	Fixed::setRawBits(int const raw)
 // Convert fixed-point to floating-point
 float Fixed::toFloat(void) const
 {
-	return (static_cast<float>(_value / (1 << _fractionalBits)));
+	return (static_cast<float>(_value) / (1 << _fractionalBits));
 }
 
 //Convert fixed-point to integer

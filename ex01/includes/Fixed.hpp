@@ -21,11 +21,18 @@ public:
 	//Constructor taking a constant floating-point float
 	Fixed(const float f);
 
+/*================================================================================**
+ * 								OPERATORS										  **
+ *================================================================================*/
 	// Copy assignment operator
 	Fixed& 				operator=(const Fixed& other);
 
 	// Destructor
 	~Fixed();
+
+/*================================================================================**
+ * 								MEMBER FUNCTIONS								  **
+ *================================================================================*/
 
 	// Getters
 	int					getRawBits(void) const;
